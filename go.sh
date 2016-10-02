@@ -2,8 +2,8 @@
 GIT=git@github.com:psymashrum/task1.git
 WORK_FOLDER=/tmp
 CODE_FOLDER=/code
-TASK_FOLDER=/tmp/task1
 PROJECT_FOLDER=${WORK_FOLDER}/${CODE_FOLDER}
+TASK_FOLDER=${PROJECT_FOLDER}/task1
 
 if [ ! -d ${WORK_FOLDER} ]; then
   mkdir ${WORK_FOLDER}
