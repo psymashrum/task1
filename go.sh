@@ -19,7 +19,7 @@ cd ${TASK_FOLDER}
 cp * ${PROJECT_FOLDER}
 docker-compose build
 docker build -t ubuntu ${PROJECT_FOLDER}
-docker run -d --name ubuntu -p 80:80 ubuntu:trusty
+docker run -d --name ubuntu -p 80:80 ubuntu:latest
 
 echo "Checking Nginx \n"
 
