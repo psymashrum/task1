@@ -16,6 +16,7 @@ git clone ${GIT}
 
 echo "Success download"
 cd ${TASK_FOLDER}
+cp * ${PROJECT_FOLDER}
 docker-compose build
 docker build -t ubuntu ${PROJECT_FOLDER}
 docker run -d --name ubuntu -p 80:80 ubuntu:latest
@@ -23,6 +24,6 @@ docker run -d --name ubuntu -p 80:80 ubuntu:latest
 echo "Checking Nginx \n"
 
 curl 127.0.0.1:80
-
+rm -fr ${TASK_FOLDER}
 echo "\nDone"
 exit 0
