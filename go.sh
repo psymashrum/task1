@@ -1,16 +1,22 @@
-#!/bin/bash
+#!/usr/bin/env bash
 GIT=git@github.com:psymashrum/task1.git
+WORK_FOLDER=/tmp
+CODE_FOLDER=/code
+PROJECT_FOLDER=${WORK_FOLDER}/${TIMESTAMP}
 
-mkdir /tmp
-mkdir /tmp/code
+if [ ! -d ${WORK_FOLDER} ]; then
+  mkdir ${WORK_FOLDER}
+fi
 
-cd /tmp/code
-git clone $GIT
+mkdir ${PROJECT_FOLDER}
+cd ${PROJECT_FOLDER}
+
+git clone ${GIT}
 
 echo "Success download"
 
 docker-compose build
-docker build -t ubuntu /tmp/code/
+docker build -t ubuntu ${PROJECT_FOLDER}
 docker run -d --name ubuntu -p 80:80 ubuntu:latest
 
 echo "Checking Nginx \n"
