@@ -2,6 +2,7 @@
 GIT=git@github.com:psymashrum/task1.git
 WORK_FOLDER=/tmp
 CODE_FOLDER=/code
+TASK_FOLDER=/tmp/task1
 PROJECT_FOLDER=${WORK_FOLDER}/${CODE_FOLDER}
 
 if [ ! -d ${WORK_FOLDER} ]; then
@@ -14,7 +15,7 @@ cd ${PROJECT_FOLDER}
 git clone ${GIT}
 
 echo "Success download"
-
+cd ${TASK_FOLDER}
 docker-compose build
 docker build -t ubuntu ${PROJECT_FOLDER}
 docker run -d --name ubuntu -p 80:80 ubuntu:latest
