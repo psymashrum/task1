@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 GIT=git@github.com:psymashrum/task1.git
 WORK_FOLDER=/tmp
-CODE_FOLDER=/code
+CODE_FOLDER=code
 PROJECT_FOLDER=${WORK_FOLDER}/${CODE_FOLDER}
 TASK_FOLDER=${PROJECT_FOLDER}/task1
 
