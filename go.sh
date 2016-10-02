@@ -1,5 +1,5 @@
 #!/bin/bash
-$GIT = "git@github.com:psymashrum/task1.git"
+GIT = "git@github.com:psymashrum/task1.git"
 
 mkdir /tmp
 mkdir /tmp/code
