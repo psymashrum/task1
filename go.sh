@@ -24,6 +24,7 @@ docker run -d --name ubuntu -p 80:80 ubuntu:latest
 echo "Checking Nginx \n"
 
 curl 127.0.0.1:80
+cd ..
 rm -fr ${TASK_FOLDER}
 echo "\nDone"
 exit 0
