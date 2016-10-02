@@ -17,14 +17,14 @@ git clone ${GIT}
 echo "Success download"
 cd ${TASK_FOLDER}
 cp * ${PROJECT_FOLDER}
-docker-compose build
-docker build -t ubuntu ${PROJECT_FOLDER}
-docker run -d --name ubuntu -p 80:80 ubuntu:latest
+sudo docker-compose build
+sudo docker build -t ubuntu ${PROJECT_FOLDER}
+sudo docker run -d --name ubuntu -p 80:80 ubuntu:latest
 
 echo "Checking Nginx \n"
 
 curl 127.0.0.1:80
 cd ..
-rm -fr ${TASK_FOLDER}
+sudo rm -fr ${TASK_FOLDER}
 echo "\nDone"
 exit 0
