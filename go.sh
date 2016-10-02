@@ -2,7 +2,7 @@
 GIT=git@github.com:psymashrum/task1.git
 WORK_FOLDER=/tmp
 CODE_FOLDER=/code
-PROJECT_FOLDER=${WORK_FOLDER}/${TIMESTAMP}
+PROJECT_FOLDER=${WORK_FOLDER}/${CODE_FOLDER}
 
 if [ ! -d ${WORK_FOLDER} ]; then
   mkdir ${WORK_FOLDER}
