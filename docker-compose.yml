@@ -1,0 +1,6 @@
+sitename:
+  build: .
+  ports:
+  - 80:80
+  volumes:
+    - /tmp/code/:/code
