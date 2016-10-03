@@ -1,6 +1,6 @@
 FROM ubuntu:trusty
 
-ARG GIT=git@github.com:psymashrum/task1.git
+ARG GIT=github.com:psymashrum/task1.git
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && apt-get install -y nginx wget git curl
