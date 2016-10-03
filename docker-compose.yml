@@ -1,9 +1,8 @@
-sitename:
-  build: .
-  build: 
-    context: .
-    dockerfile: Dockerfile
-  ports:
-  - 80:80
-  volumes:
-    - /tmp/code/:/code
+version: '2'
+services:
+  nginx:
+    build: .
+    ports:
+     - "80:80"
+    volumes:
+     - /tmp/code:/code
