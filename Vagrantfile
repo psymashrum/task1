@@ -64,14 +64,13 @@ Vagrant.configure("2") do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
-  #config.vm.synced_folder "./", "/home/vagrant/"
+#  config.vm.synced_folder "./", "/home/vagrant/"
   config.vm.provision "puppet" do |puppet|
-    #puppet.manifests_path = "/home/vagrnat/"
-    puppet.manifest_file = "./tomcat.pp"
-    puppet.manifest_file = "./nginx.pp"
+   puppet.manifest_file = "./tomcat.pp"
+   puppet.manifest_file = "./nginx.pp"
   end
   #   apt-get update
   #   apt-get install -y apache2
   # SHELL
-  config.vm.network :forwarded_port, guest: 8888, host: 8888
+  config.vm.network "forwarded_port", guest: 8888, host: 8888
 end
