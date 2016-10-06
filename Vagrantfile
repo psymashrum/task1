@@ -65,8 +65,12 @@ Vagrant.configure("2") do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
 #  config.vm.synced_folder "./", "/home/vagrant/"
-  #config.vm.provision "shell",
-  #  inline: "rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm && yum install -y puppet"
+  config.vm.provision "shell",
+    inline: "rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm && yum install -y puppet"
+  config.vm.provision "shell",
+    inline: "puppet module install puppet-nginx"
+  config.vm.provision "shell",
+    inline: "puppet module install puppetlabs-tomcat"
   config.vm.provision "puppet" do |puppet|
     puppet.environment = "production"
     puppet.environment_path = "../../"
