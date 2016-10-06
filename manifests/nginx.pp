@@ -1,6 +1,6 @@
   class {
     'nginx':;
-
+  }
   nginx::Proxy {
     ensure => present,
     enable => true,
