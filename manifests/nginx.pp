@@ -1,11 +1,14 @@
-  class {
-    'nginx':;
+class nginx {
+  package { 'nginx':
+    ensure => latest
   }
-  nginx::Proxy {
-    ensure => present,
+  service { 'nginx':
+    ensure => running,
     enable => true,
+    require => Package['nginx']
   }
-
-  nginx::proxy {
-    'localhost': server_name => 'localhost', proxy_pass => 'http://127.0.0.1:8080';
-  }
+  nginx::resource::vhost { 'my.localhost.com':
+    listen_port => 8888,
+    proxy       => 'http://localhost:8080',
+}
+}
