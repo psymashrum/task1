@@ -1,0 +1,19 @@
+---
+- hosts: all
+  tasks:
+    - name: NGINX | Installing NGINX repo rpm
+      become: yes
+      yum:
+       name: http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
+    - name: NGINX | Installing NGINX
+      become: yes
+      yum:
+       name: nginx
+       state: latest
+    - name: NGINX | Configure default
+      sudo: yes
+      template: src=default.conf dest=/etc/nginx/conf.d/default.conf
+      notify:
+       - restart nginx
+    - name: NGINX | ensure nginx is running (and enable it at boot)
+      service: name=nginx state=started enabled=yes
