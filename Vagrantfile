@@ -6,6 +6,7 @@ Vagrant.configure("2") do |config|
     inline: "yum install -y ansible"  
   config.vm.provision :ansible do |ansible|
     ansible.playbook = "nginx.yml"
+    ansible.playbook = "tomcat.yml"
   end
   config.vm.network "forwarded_port", guest: 8888, host: 8888
 end

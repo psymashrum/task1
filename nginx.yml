@@ -16,4 +16,4 @@
       notify:
        - restart nginx
     - name: NGINX | ensure nginx is running (and enable it at boot)
-      service: name=nginx state=started enabled=yes
+      service: name=nginx.service state=started enabled=yes
