@@ -19,3 +19,6 @@
     - name: Copy nginx configuration for reverse
       template: src=default.conf dest=/etc/nginx/conf.d/default.conf
       notify: restart nginx
+    - name: Starting nginx
+      sudo: true
+      command: nginx
