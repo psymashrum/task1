@@ -10,7 +10,6 @@ Vagrant.configure("2") do |config|
       'webservers' => ['default'],
        "dev_enviroment" => ["default"]
     }
-    ansible.playbook = "nginx.yml"
     ansible.playbook = "site.yml"
   end
   config.vm.network "forwarded_port", guest: 8888, host: 8888
